@@ -54,7 +54,7 @@ function App() {
         value={enteredCity}
         onBlur={blurHandler}></input><br></br>
 
-        <button type='submit' onClick={buttonClickHandler}>Check Weather</button>
+        <button type='submit' onClick={buttonClickHandler}>CHECK WEATHER</button>
         {enteredCityIsInvalid && <p>Please enter a valid city</p>}
 
         <GetWeather enteredCity={enteredCity} buttonClicked={buttonClicked} />

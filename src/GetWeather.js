@@ -12,10 +12,11 @@ const GetWeather = (props) => {
         setGetWeather({
             city: jsonData.address,
             description: jsonData.description,
-            temp: jsonData.temp,
+            temp: jsonData.days[0].temp,
         });
       })();}, [buttonClicked, enteredCity ])
       console.log(getWeather);
+
 
       return (
         <div>

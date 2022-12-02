@@ -1,6 +1,6 @@
 import './App.css';
-import GetCityKey from './GetCityKey';
 import { useState} from 'react';
+import GetWeather from './GetWeather';
 
 function App() {
   // Get user city input from the form
@@ -44,7 +44,7 @@ function App() {
         <button type='submit'>Check Weather</button>
         {enteredCityIsInvalid && <p>Please enter a valid city</p>}
 
-        <GetCityKey enteredCity={enteredCity} />
+        <GetWeather enteredCity={enteredCity} />
       </form>
     </div>
   );

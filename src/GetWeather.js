@@ -13,15 +13,27 @@ const GetWeather = (props) => {
             city: jsonData.address,
             description: jsonData.description,
             temp: jsonData.days[0].temp,
+            tempMax: jsonData.days[0].tempmax,
+            tempMin: jsonData.days[0].tempmin,
+            feelsLike: jsonData.days[0].feelslike,
         });
       })();}, [buttonClicked, enteredCity ])
       console.log(getWeather);
 
+      if (getWeather.feelsLike <= 20) {
+        getWeather.feelsLike = getWeather.feelsLike + ' Reccomend 1-2 Layers'
+      };
 
       return (
         <div>
-
-      {buttonClicked && <p>{getWeather.city}<br></br>{getWeather.description}<br></br>{getWeather.temp}</p>}
+      {buttonClicked && <p>
+        {getWeather.city}<br></br>
+        {getWeather.description}<br></br>
+        Current Temperature:{getWeather.temp}&deg;c<br></br>
+        Today's High:{getWeather.tempMax}&deg;c<br></br>
+        Today's Low: {getWeather.tempMin}&deg;c<br></br>
+        Feels like: {`${getWeather.feelsLike}&deg;c`}c<br></br>
+        </p>}
         </div>
       )
 };

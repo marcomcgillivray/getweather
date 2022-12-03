@@ -42,7 +42,7 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Enter a city:</h2>
+      <h2>Please Enter a City:</h2>
       <form onSubmit={formSubmissionHandler}>
 
         <label htmlFor='city'></label>

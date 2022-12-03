@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
+import './GetWeather.css';
 
 const GetWeather = (props) => {
     const [getWeather, setGetWeather] = useState({});
+    // const [layers, setLayers] = useState('');
 
     const enteredCity = props.enteredCity;
     const buttonClicked = props.buttonClicked;
@@ -16,24 +18,18 @@ const GetWeather = (props) => {
             tempMax: jsonData.days[0].tempmax,
             tempMin: jsonData.days[0].tempmin,
             feelsLike: jsonData.days[0].feelslike,
+            date: jsonData.days[0].datetimeEpoch,
         });
       })();}, [buttonClicked, enteredCity ])
       console.log(getWeather);
 
-      if (getWeather.feelsLike <= 20) {
-        getWeather.feelsLike = getWeather.feelsLike + ' Reccomend 1-2 Layers'
-      };
 
       return (
-        <div>
-      {buttonClicked && <p>
-        {getWeather.city}<br></br>
-        {getWeather.description}<br></br>
-        Current Temperature:{getWeather.temp}&deg;c<br></br>
-        Today's High:{getWeather.tempMax}&deg;c<br></br>
-        Today's Low: {getWeather.tempMin}&deg;c<br></br>
-        Feels like: {`${getWeather.feelsLike}&deg;c`}c<br></br>
-        </p>}
+        <div className="wrapper">
+          <div className="output">
+            {buttonClicked &&
+            <p>{getWeather.city.toUpperCase()} WEATHER</p>}
+          </div>
         </div>
       )
 };

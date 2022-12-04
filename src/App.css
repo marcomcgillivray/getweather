@@ -2,8 +2,19 @@
   text-align: center;
   margin: auto;
   font-family: 'Solis';
-  
 }
+
+.header {
+  font-family: 'Solis';
+  font-size: 24px;
+  text-decoration: underline;
+}
+
+.App input {
+  font-size: 18px;
+  border-radius: 5px;
+}
+
 
 .App-logo {
   height: 40vmin;

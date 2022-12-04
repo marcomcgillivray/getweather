@@ -7,6 +7,7 @@ import './SetIcon.css';
 const SetIcon = (props) => {
     const getWeather = props.getWeather;
 
+    // Component to output weather image conditionally based upon rain/cloud coverage
     if (getWeather.cloud < 50 && getWeather.rain < 5){
     return (
         <div className='icon'>

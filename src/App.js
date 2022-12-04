@@ -50,11 +50,13 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Please Enter a City:</h2>
-      <form onSubmit={formSubmissionHandler}>
+      <div className='header'>
+        <h2>Check Weather</h2>
+      </div>
+        <form onSubmit={formSubmissionHandler}>
 
-        <label htmlFor='city'></label>
-
+        <label htmlFor='city'>Enter a City Below: </label><br></br>
+        
         <input
         type='text'
         placeholder='Enter a City'

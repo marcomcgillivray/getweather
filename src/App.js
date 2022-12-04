@@ -69,6 +69,7 @@ function App() {
 
         <GetWeather enteredCity={enteredCity} buttonClicked={buttonClicked} />
       </form>
+      <a href="https://github.com/marcomcgillivray/getweather">Link to Github Repository</a>
     </div>
   );
 }

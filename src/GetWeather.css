@@ -1,6 +1,7 @@
 .wrapper {
     display: flex;
     justify-content: center;
+    font-family: 'Solis';
 }
 
 .output {
@@ -9,11 +10,53 @@
     height: 300px;
     background-color: #fff;
     border-radius: 10px;
-    font-family: 'Georgia';
 }
 
 .output p {
     text-align: left;
     align-items: left;
     margin: 10px 10px auto;
+    font-size: larger;
+    z-index: 100;
+    order: 1;
+    color: #253d5b
+}
+
+.output h2 {
+    text-align: left;
+    margin: 100px 30%;
+    font-size: 48px;
+    font-weight:500;
+}
+
+.output ul {
+    text-align: right;
+    margin: -160px 200px;
+    list-style-type: none;
+    width: 150px;
+}
+
+.output li {
+    margin: 10px;
+    text-decoration: underline rgb(110, 110, 110, 0.4);
+    width: 150px;
+    font-size: 18px;
+    z-index: 10000;
+}
+
+.icon {
+    margin: 30px 0;
+}
+
+span {
+    margin: 500px auto auto;
+}
+
+@media screen and (min-width: 64em) {
+    .output ul {
+        margin: -160px 200px; 
+    }
+    .output li {
+        width: 200px;
+    }
 }

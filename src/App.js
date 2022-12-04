@@ -14,9 +14,6 @@ function App() {
   const enteredCityIsValid = enteredCity.trim() !== '';
   const enteredCityIsInvalid = !enteredCityIsValid && enteredCityTouched;
 
-  const cityChangeHandler = event => {
-    setEnteredCity(event.target.value)
-  };
 
   const blurHandler = () => {
     setEnteredCityTouched(true)
@@ -25,20 +22,31 @@ function App() {
   const buttonClickHandler = event => {
     event.preventDefault();
     setButtonClicked(true);
-    console.log(buttonClicked)
   }
+
+    // Assign new state value
+    const cityChangeHandler = event => {
+      setEnteredCity(event.target.value)
+    };
+
+    const resetForm = () => {
+      setEnteredCity('')
+      setButtonClicked(false)
+      setEnteredCityTouched(false)
+    }
 
   const formSubmissionHandler = event => {
     event.preventDefault();
 
     if (!enteredCityIsValid && !buttonClicked) {
       return;
+    } else {
+
+      GetWeather();
+      resetForm();
     }
-    
-    setEnteredCity('');
-    setEnteredCityTouched(false);
-    setButtonClicked(false);
   };
+
 
   return (
     <div className="App">
@@ -54,7 +62,7 @@ function App() {
         value={enteredCity}
         onBlur={blurHandler}></input><br></br>
 
-        <button type='submit' onClick={buttonClickHandler}>CHECK WEATHER</button>
+        <button type='button' onClick={buttonClickHandler}>CHECK WEATHER</button>
         {enteredCityIsInvalid && <p>Please enter a valid city</p>}
 
         <GetWeather enteredCity={enteredCity} buttonClicked={buttonClicked} />
